@@ -1,0 +1,9 @@
+<nav class="bg-primary navbar sticky-top">
+<div class="brand navbar-brand text-light">
+    {{appTitle}}
+</div>
+</nav>
+<div class="container mt-3 mb-5 pb-3">
+        <router-outlet></router-outlet>
+</div>
+<app-navbar [IsInCheckout]="isInCheckout" [IsInScanner]="isInScanner" [IsInInvoice]="isInInvoice"></app-navbar>

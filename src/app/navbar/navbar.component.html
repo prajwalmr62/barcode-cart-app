@@ -1,0 +1,11 @@
+<nav class="btn-group fixed-bottom navbar">
+  <button class="btn btn-secondary w-50" *ngIf="!IsInScanner && !IsInInvoice" routerLink="/scanner">Add a product</button>
+  <button class="btn btn-secondary w-50" *ngIf="IsInInvoice" (click)="clearAndRedirect()">Make New Order</button>
+  <button class="btn btn-primary w-50" *ngIf="IsInInvoice" (click)="print()">Print Invoice</button>
+  <ng-container *ngIf="cartCount > 0 && IsInScanner">
+    <button class="btn btn-primary w-100" routerLink="/checkout">Checkout {{cartCount}} Items</button>
+  </ng-container>
+  <ng-container *ngIf="cartCount > 0 && IsInCheckout">
+    <button class="btn btn-primary w-50" routerLink="/order">Order {{cartCount}} Items</button>
+  </ng-container>
+</nav>

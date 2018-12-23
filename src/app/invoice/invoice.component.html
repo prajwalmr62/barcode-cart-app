@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="no-print">
+      Your order has been placed.
+    </h2>
+  </div>
+  <div class="col">
+    <div class="card mb-3">
+      <div class="card-header">
+        <span class="card-title">Order Details</span>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <span class="card-title pb-1">
+              Order №: ORDN12345
+            </span>
+              <address class="mt-2">
+                For: Nagendra Prajwal,
+                <br class="m-0">
+                Somewhere, local
+                <br class="m-0">
+                PIN : 123456
+              </address>
+          </div>
+          <div class="col">
+            <div class="w-100 clearfix">
+              <span class="float-left">Total Cart Amount</span>
+              <span class="float-right">$ {{totalPrice}}</span>
+            </div>
+            <div class="w-100 clearfix">
+              <span class="float-left">VAT amount (5%)</span>
+              <span class="float-right">$ {{totalVat}}</span>
+            </div>
+            <div class="w-100 clearfix">
+              <span class="float-left">Total Amount</span>
+              <span class="float-right">$ {{totalAmount}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-bordered table-responsive-sm table-striped">
+      <thead>
+        <tr class="text-center">
+          <td>
+            №
+          </td>
+          <td class="w-50">
+            Product name
+          </td>
+          <td>
+            Quantity
+          </td>
+          <td>
+            Price/Ea
+          </td>
+          <td>
+            Price
+          </td>
+        </tr>
+      </thead>
+      <tr *ngFor="let cartObj of productList; index as i">
+        <td>
+          #{{i+1}}
+        </td>
+        <td>
+          {{cartObj.product.name}}
+        </td>
+        <td class="text-right">
+          {{cartObj.qty}}
+        </td>
+        <td class="text-right">
+          {{cartObj.product.price.value}} {{cartObj.product.price.unit}}
+        </td>
+        <td class="text-right">
+            {{cartObj.product.price.value* cartObj.qty}} {{cartObj.product.price.unit}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
