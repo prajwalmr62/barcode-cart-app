@@ -3,3 +3,5 @@
 
 This project was uploaded to demonstrate my ability to create a web app.
 
+This project is tested with Snyk.io for vulnerabilites. And build verification is done by travis-ci.prg
+
